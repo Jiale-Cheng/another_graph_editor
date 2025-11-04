@@ -1,4 +1,5 @@
 import { Settings } from "../types";
+import { displayNodeLabel } from "./utils";
 
 export interface GraphRenderer {
   // 基础绘制属性
@@ -346,6 +347,9 @@ export class SVGRenderer implements GraphRenderer {
   }
 
   fillText(text: string, x: number, y: number): void {
+    if (!text) {
+      return;
+    }
     // 文本对齐
     let anchor = "middle";
     if (this.textAlign === "left") anchor = "start";
@@ -846,5 +850,5 @@ export function drawOctagon(
 
   ctx.font = `${settings.fontSize}px JB`;
   ctx.fillStyle = nodeLabelColor;
-  ctx.fillText(label, x, y);
+  ctx.fillText(displayNodeLabel(label), x, y);
 }

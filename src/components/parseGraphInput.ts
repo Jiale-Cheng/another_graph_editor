@@ -142,7 +142,7 @@ export function parseGraphInputParentChild(
   let mp = new Map<string, string>();
 
   for (let i = 0; i < len; i++) {
-    if (nl[i] !== "_") {
+    if (!nl[i].startsWith("_")) {
       mp.set(sortedNodes[i], nl[i]);
     }
   }
@@ -285,7 +285,7 @@ export function parseGraphInputEdges(
   let mp = new Map<string, string>();
 
   for (let i = 0; i < len; i++) {
-    if (nl[i] !== "_") {
+    if (!nl[i].startsWith("_")) {
       mp.set(sortedNodes[i], nl[i]);
     }
   }

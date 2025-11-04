@@ -814,8 +814,13 @@ function renderNodes(renderer: GraphRenderer) {
 
     renderer.font = `${settings.fontSize + 2}px JB`;
     renderer.fillStyle = textColor;
+        const baseLabel = isInteger(s)
+      ? (parseInt(s, 10) + labelOffset).toString()
+      : s;
+    const printedLabel = s.startsWith("_") ? "" : baseLabel;
+
     renderer.fillText(
-      isInteger(s) ? (parseInt(s, 10) + labelOffset).toString() : s,
+      printedLabel,
       node!.pos.x,
       node!.pos.y + TEXT_Y_OFFSET,
     );

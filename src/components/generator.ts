@@ -1,3 +1,8 @@
+export const displayNodeLabel = (label: string | number | undefined): string => {
+  const s = String(label ?? "").trim();
+  // Hide labels that begin with an underscore (e.g., _a, _tmp)
+  return s.startsWith("_") ? "" : s;
+};
 import { Randomizer } from "../types";
 import { isInteger } from "./utils";
 import { randInt } from "./utils";
@@ -152,5 +157,10 @@ export function generateRandomNodeLabels(
     ans.push(randInt(l, r));
   }
 
-  return ans.join(" ");
+    // Apply the underscore-hiding rule before returning the label string
+  const rendered = ans.map((v) => displayNodeLabel(v));
+  return rendered.join(" ");
 }
+
+
+export default null;

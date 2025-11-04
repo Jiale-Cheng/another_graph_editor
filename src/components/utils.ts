@@ -9,6 +9,16 @@ export function isInteger(s: string) {
   return parseInt(s).toString() === s;
 }
 
+export function isHiddenLabel(label: string | number | undefined): boolean {
+  const s = String(label ?? "").trim();
+  return s.startsWith("_");
+}
+
+export function displayNodeLabel(label: string | number | undefined): string {
+  const s = String(label ?? "").trim();
+  return isHiddenLabel(s) ? "" : s;
+}
+
 export function padNode(
   u: string,
   testCaseNumber: number,
