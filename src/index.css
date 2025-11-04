@@ -4,19 +4,25 @@
 
 @layer base {
   @font-face {
-    font-family: Jetbrains Mono;
+    font-family: "JetBrains Mono";
     font-weight: 700;
-    src: url(/JetBrainsMono-Bold.ttf);
+    font-style: normal;
+    font-display: swap;
+    src: url("./JetBrainsMono-Bold.ttf") format("truetype");
   }
   @font-face {
-    font-family: Jetbrains Mono;
+    font-family: "JetBrains Mono";
     font-weight: 600;
-    src: url(/JetBrainsMono-SemiBold.ttf);
+    font-style: normal;
+    font-display: swap;
+    src: url("./JetBrainsMono-SemiBold.ttf") format("truetype");
   }
   @font-face {
-    font-family: Jetbrains Mono;
+    font-family: "JetBrains Mono";
     font-weight: 400;
-    src: url(/JetBrainsMono-Regular.ttf);
+    font-style: normal;
+    font-display: swap;
+    src: url("./JetBrainsMono-Regular.ttf") format("truetype");
   }
 }
 
