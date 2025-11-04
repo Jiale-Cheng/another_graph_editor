@@ -13,5 +13,5 @@ export default defineConfig({
       },
     }),
   ],
-  base: "https://jiale-cheng.github.io/another_graph_editor/",
+  base: "/another_graph_editor/",
 });
