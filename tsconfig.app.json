@@ -6,6 +6,7 @@
     "module": "ESNext",
     "moduleResolution": "bundler",
     "allowImportingTsExtensions": true,
+    "noEmit": true,
     "lib": ["ES2022", "DOM", "DOM.Iterable", "WebWorker"],
     "resolveJsonModule": true,
     "allowSyntheticDefaultImports": true,
